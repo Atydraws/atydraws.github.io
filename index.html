@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amalia's Art Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header" data-scroll-header>
+        <div class="container">
+            <h1 class="site-title">Amalia</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#commissions">Commissions</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h2>Capturing Moments, Designing Dreams.</h2>
+            <p>Welcome to the artistic world of Amalia – where photography, graphic design, sketches, and anime converge.</p>
+            <a href="#portfolio" class="button">View My Work</a>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h3>My Portfolio</h3>
+            <div class="portfolio-categories">
+                <button class="category-button active" data-category="all">All</button>
+                <button class="category-button" data-category="photography">Photography</button>
+                <button class="category-button" data-category="graphic-design">Graphic Design</button>
+                <button class="category-button" data-category="sketches">Sketches</button>
+                <button class="category-button" data-category="anime">Anime</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item photography">
+                    <img src="images/photography-1.jpg" alt="Photography Piece 1">
+                    <div class="item-overlay">
+                        <h4>City Lights</h4>
+                        <p>Urban Photography</p>
+                    </div>
+                </div>
+                <div class="portfolio-item graphic-design">
+                    <img src="images/graphic-design-1.jpg" alt="Graphic Design Piece 1">
+                    <div class="item-overlay">
+                        <h4>Brand Identity</h4>
+                        <p>Logo & Branding</p>
+                    </div>
+                </div>
+                <div class="portfolio-item sketches">
+                    <img src="images/sketch-1.jpg" alt="Sketch Piece 1">
+                    <div class="item-overlay">
+                        <h4>Portrait Study</h4>
+                        <p>Charcoal Sketch</p>
+                    </div>
+                </div>
+                <div class="portfolio-item anime">
+                    <img src="images/anime-1.jpg" alt="Anime Piece 1">
+                    <div class="item-overlay">
+                        <h4>Fantasy Character</h4>
+                        <p>Digital Anime Art</p>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="shop" class="shop-section">
+        <div class="container">
+            <h3>Shop My Art</h3>
+            <p>Discover unique pieces available for direct purchase. New artworks added regularly!</p>
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="images/product-1.jpg" alt="Product Name 1">
+                    <h4>"Dreamscape" Print</h4>
+                    <p class="price">€45.00</p>
+                    <button class="button buy-button">Buy Now (PayPal)</button>
+                    <p class="product-description">A vibrant digital print, perfect for any living space.</p>
+                </div>
+                <div class="product-item">
+                    <img src="images/product-2.jpg" alt="Product Name 2">
+                    <h4>"Forest Whisper" Original Sketch</h4>
+                    <p class="price">€120.00</p>
+                    <button class="button buy-button">Buy Now (PayPal)</button>
+                    <p class="product-description">Hand-drawn, unique graphite sketch on high-quality paper.</p>
+                </div>
+                </div>
+            <p class="paypal-note">Payments securely processed via PayPal.</p>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <img src="images/amalia-profile.jpg" alt="Amalia Profile Picture" class="profile-pic">
+            <h3>About Amalia</h3>
+            <p>Hello! I'm Amalia, a 20-year-old Romanian artist with a passion for bringing visions to life through various artistic expressions. My journey into art began with sketching, evolving into the dynamic worlds of photography, graphic design, and anime.</p>
+            <p>I believe art is a powerful medium for storytelling and emotion. My work often explores themes of imagination, urban landscapes, and character development. I'm always eager to take on new creative challenges and push the boundaries of my artistic abilities.</p>
+            <p class="artist-statement">**Artist Statement:** "Through my art, I aim to create visual narratives that invite viewers into a world of imagination and emotion, capturing fleeting moments and crafting new realities."</p>
+        </div>
+    </section>
+
+    <section id="commissions" class="commissions-section">
+        <div class="container">
+            <h3>Custom Commissions</h3>
+            <p>Bring your unique ideas to life! I offer personalized digital and traditional art commissions, perfect for gifts, personal projects, or unique profile pictures.</p>
+            <h4>What I Offer:</h4>
+            <ul>
+                <li>**Digital Portraits/Character Art:** From stylized photos of you or a loved one, to original character designs in my anime style.</li>
+                <li>**Custom Illustrations:** Tailored graphic designs for personal use, social media, or small projects.</li>
+                <li>**Personalized Sketches:** Hand-drawn conceptual art or stylized portraits based on your vision.</li>
+                <li>**Anime Style Art:** Original characters, fan art, or transforming your photos into anime-style illustrations.</li>
+            </ul>
+            <p class="commission-note">**Please Note:** I currently do not take commissions for hyper-realism art. My style leans towards conceptual, stylized, and imaginative interpretations.</p>
+            <p>To request a commission, please provide details about your project, including your idea, preferred style (e.g., anime, sketch), and any reference images. I will then provide a personalized quote and timeline.</p>
+            <a href="#contact" class="button">Request a Commission</a>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h3>Get in Touch</h3>
+            <p>Have a question, a project idea, or just want to say hello? Feel free to reach out!</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="button">Send Message</button>
+            </form>
+            <p class="contact-info">Email: <a href="mailto:amalia.art@email.com">amalia.art@email.com</a></p>
+            <div class="social-links">
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">ArtStation</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Amalia. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for category filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-button');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filter = this.dataset.category;
+
+                    portfolioItems.forEach(item => {
+                        if (filter === 'all' || item.classList.contains(filter)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // JavaScript for shrinking/expanding header on scroll
+            const header = document.querySelector('[data-scroll-header]');
+            const siteTitle = header.querySelector('.site-title');
+            const mainNav = header.querySelector('.main-nav');
+            
+            // Initial state check
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+                siteTitle.style.fontSize = '1.5em';
+                mainNav.classList.add('hidden-nav'); // Hide nav immediately if scrolled on load
+            }
+
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+                if (scrollTop > 50) {
+                    // Scrolling down past 50px
+                    if (!header.classList.contains('scrolled')) {
+                        header.classList.add('scrolled');
+                        siteTitle.style.fontSize = '1.5em';
+                        mainNav.classList.add('hidden-nav');
+                    }
+                } else {
+                    // At or near the top of the page (within 50px)
+                    if (header.classList.contains('scrolled')) {
+                        header.classList.remove('scrolled');
+                        siteTitle.style.fontSize = '2em';
+                        mainNav.classList.remove('hidden-nav');
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
