@@ -1,0 +1,481 @@
+/* General Body & Typography */
+body {
+    font-family: 'Montserrat', sans-serif; /* Professional, clean font */
+    margin: 0;
+    line-height: 1.6;
+    color: #333; /* Dark grey for text */
+    background-color: #fff; /* Predominantly white background */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif; /* Elegant font for headings */
+    color: #333;
+    margin-bottom: 15px;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.75em; }
+
+/* Header */
+.main-header {
+    background-color: #000; /* Black header */
+    color: #fff;
+    padding: 10px 0; /* Initial padding */
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: padding 0.3s ease, height 0.3s ease, font-size 0.3s ease; /* Smooth transition for shrinking */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Distribute items horizontally */
+    height: 80px; /* Initial fixed height for better control */
+    overflow: hidden; /* Hide overflowing content when shrinking */
+    padding-left: 20px; /* Add some padding to the left for title */
+    padding-right: 20px; /* Add some padding to the right */
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0; /* Remove container padding to let header manage it */
+}
+
+.main-header.scrolled {
+    padding: 5px 0; /* Even smaller padding when scrolled */
+    height: 50px; /* Smaller height when scrolled */
+    justify-content: center; /* Center "Amalia" when shrunk */
+}
+
+.site-title {
+    margin: 0;
+    font-size: 2em; /* Initial font size */
+    color: #fff;
+    transition: font-size 0.3s ease; /* Smooth transition for font size */
+}
+
+/* No change needed for .main-header.scrolled .site-title as JS handles it directly now */
+
+
+.main-nav {
+    flex-grow: 1; /* Allows navigation to take available space */
+    display: flex; /* Always flex initially */
+    justify-content: flex-end; /* Align navigation to the right */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for nav */
+}
+
+/* NEW CSS CLASS for hidden navigation */
+.main-nav.hidden-nav {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Prevent interaction when hidden */
+}
+
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-nav ul li {
+    margin: 0 15px;
+}
+
+.main-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #bebebe; /* Light beige on hover */
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #f8f8f8; /* Light grey/beige for hero */
+    text-align: center;
+    padding: 80px 20px;
+    color: #333;
+}
+
+.hero-section h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #000; /* Black button */
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #bebebe; /* Beige on hover */
+    color: #000;
+}
+
+/* Section Styling (General) */
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+section:nth-of-type(even) { /* Alternate background for sections */
+    background-color: #f8f8f8; /* Light beige/off-white */
+}
+
+/* Portfolio Section */
+.portfolio-categories {
+    margin-bottom: 30px;
+}
+
+.category-button {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.category-button:hover,
+.category-button.active {
+    background-color: #bebebe; /* Beige for active/hover */
+    border-color: #bebebe;
+    color: #000;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.portfolio-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+.item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    color: #fff;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .item-overlay {
+    transform: translateY(0);
+}
+
+.item-overlay h4 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.item-overlay p {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* Shop Section */
+.shop-section .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.product-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.product-item img {
+    width: 100%;
+    height: 200px; /* Fixed height for product images */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.product-item h4 {
+    margin-top: 0;
+    font-size: 1.3em;
+    color: #000;
+}
+
+.product-item .price {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #bebebe; /* Beige for price */
+    margin-bottom: 10px;
+}
+
+.product-item .buy-button {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.paypal-note {
+    margin-top: 40px;
+    font-style: italic;
+    color: #666;
+}
+
+/* About Section */
+.about-section .profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border: 5px solid #bebebe; /* Beige border around profile pic */
+}
+
+.about-section p {
+    max-width: 800px;
+    margin: 0 auto 15px;
+    text-align: justify;
+}
+
+.artist-statement {
+    font-style: italic;
+    color: #555;
+    margin-top: 30px;
+    padding: 20px;
+    border-left: 5px solid #bebebe;
+    background-color: #fcfcfc;
+}
+
+
+/* Commissions Section */
+.commissions-section ul {
+    list-style: none;
+    padding: 0;
+    max-width: 700px;
+    margin: 20px auto 30px;
+    text-align: left;
+}
+
+.commissions-section ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #444;
+}
+
+.commissions-section ul li strong {
+    color: #000;
+}
+
+.commission-note {
+    font-style: italic;
+    color: #777;
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px dashed #bebebe;
+    border-radius: 5px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contact Section */
+.contact-form {
+    max-width: 600px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allows vertical resizing */
+}
+
+.contact-form .button {
+    align-self: flex-start; /* Aligns button to the left */
+    width: auto;
+}
+
+.contact-info {
+    margin-top: 30px;
+    font-size: 1.1em;
+}
+
+.contact-info a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #bebebe;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #000;
+}
+
+
+/* Footer */
+.main-footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-header {
+        height: auto; /* Allow height to adjust on mobile */
+        padding: 10px 20px; /* Consistent padding */
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .main-header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav {
+        margin-top: 15px; /* Space between title and nav */
+        justify-content: center; /* Center nav items */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero-section h2 {
+        font-size: 2.2em;
+    }
+
+    .portfolio-grid,
+    .shop-section .product-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+
+    .portfolio-item, .product-item {
+        margin-bottom: 20px;
+    }
+
+    .about-section p,
+    .commissions-section ul,
+    .commission-note {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .contact-form .button {
+        align-self: center; /* Center button on small screens */
+    }
+
+    /* Mobile specific header for scrolled state */
+    .main-header.scrolled {
+        height: 50px;
+        padding: 5px 20px;
+        flex-direction: row; /* Keep it a row when shrunk */
+        justify-content: center;
+    }
+
+    /* The .main-nav.hidden-nav will now handle hiding for both desktop and mobile */
+}
+
+@media (max-width: 480px) {
+    .hero-section h2 {
+        font-size: 1.8em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
