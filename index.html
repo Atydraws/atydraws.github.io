@@ -16,12 +16,12 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
-                  <!--  <li><a href="#shop">Shop</a></li> -->
-                    <li><a href="#about">About</a></li>
+                  <li><a href="#about">About</a></li>
                     <li><a href="#commissions">Commissions</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <button class="button support-button" id="openSupportModal">Support Me</button>
         </div>
     </header>
 
@@ -38,33 +38,8 @@
             <h3>My Portfolio</h3>
             <div class="portfolio-categories">
                 <button class="category-button active" data-category="all">All</button>
-              <!--  <button class="category-button" data-category="photography">Photography</button>
-                <button class="category-button" data-category="graphic-design">Graphic Design</button>
-               <button class="category-button" data-category="sketches">Sketches</button>
-                <button class="category-button" data-category="anime">Anime</button> -->
-            </div>
-          <!--  <div class="portfolio-grid">
-                <div class="portfolio-item photography">
-                    <img src="pimages/p1.jpg" alt="Photography Piece 1">
-                    <div class="item-overlay">
-                        <h4>Flower</h4>
-                    </div>
-                </div>
-                <div class="portfolio-grid">
-                <div class="portfolio-item photography">
-                    <img src="pimages/p2.jpg" alt="Photography Piece 1">
-                    <div class="item-overlay">
-                        <h4>Flower</h4>
-                    </div>
-                </div>
-                    <div class="portfolio-grid">
-                <div class="portfolio-item photography">
-                    <img src="pimages/p3.jpg" alt="Photography Piece 1">
-                    <div class="item-overlay">
-                        <h4>The Moon</h4>
-                    </div> 
-                </div> -->
-                <div class="portfolio-item graphic-design">
+              </div>
+          <div class="portfolio-item graphic-design">
                     <img src="dimages/d1.jpg" alt="Graphic Design Piece 1">
                     <div class="item-overlay">
                         <h4>JJBA style drawing</h4>
@@ -121,54 +96,10 @@
                     </div>
         </div>
 </div>
-                        <!--
-                <div class="portfolio-item sketches">
-                    <img src="images/sketch-1.jpg" alt="Sketch Piece 1">
-                    <div class="item-overlay">
-                        <h4>Portrait Study</h4>
-                        <p>Charcoal Sketch</p>
-                    </div>
-                </div>
-                <div class="portfolio-item anime">
-                    <img src="images/anime-1.jpg" alt="Anime Piece 1">
-                    <div class="item-overlay">
-                        <h4>Fantasy Character</h4>
-                        <p>Digital Anime Art</p>
-                    </div>
-                </div>
-                </div>
-                    -- -->
-        </div>
-  <!--  </section>
-
-    <section id="shop" class="shop-section">
+                        </div>
+  <section id="about" class="about-section">
         <div class="container">
-            <h3>Shop My Art</h3>
-            <p>Discover unique styles available for comissions. New artworks created regularly!</p>
-            <div class="product-grid">
-                <div class="product-item">
-                    <img src="images/product-1.jpg" alt="Product Name 1">
-                    <h4>"Dreamscape" Print</h4>
-                    <p class="price">€45.00</p>
-                    <button class="button buy-button">Buy Now (PayPal)</button>
-                    <p class="product-description">A vibrant digital print, perfect for any living space.</p>
-                </div>
-                <div class="product-item">
-                    <img src="images/product-2.jpg" alt="Product Name 2">
-                    <h4>"Forest Whisper" Original Sketch</h4>
-                    <p class="price">€120.00</p>
-                    <button class="button buy-button">Buy Now (PayPal)</button>
-                    <p class="product-description">Hand-drawn, unique graphite sketch on high-quality paper.</p>
-                </div>
-                </div>
-            <p class="paypal-note">Payments securely processed via PayPal.</p>
-        </div>
-    </section>
--->
-    <section id="about" class="about-section">
-        <div class="container">
-        <!--    <img src="images/amalia-profile.jpg" alt="Amalia Profile Picture" class="profile-pic"> -->
-            <h3>About me</h3>
+        <h3>About me</h3>
             <p>Hello! I'm Amalia, a Romanian artist with a passion for bringing visions to life through various artistic expressions. My journey into art began with sketching, evolving into the dynamic worlds of photography, graphic design, and anime.
             kittymeowmeowia</p>
          </div>
@@ -214,6 +145,18 @@
         </div>
     </footer>
 
+    <div id="supportModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Support My Art!</h2>
+            <p>Would you like to support Amalia's artistic journey?</p>
+            <div class="modal-buttons">
+                <button class="button" id="yesSupport">Yes, I'd love to!</button>
+                <button class="button" id="noSupport">No, thanks</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // JavaScript for category filtering
         document.addEventListener('DOMContentLoaded', function() {
@@ -241,7 +184,8 @@
             const header = document.querySelector('[data-scroll-header]');
             const siteTitle = header.querySelector('.site-title');
             const mainNav = header.querySelector('.main-nav');
-            
+            const supportButton = document.getElementById('openSupportModal'); // Get the support button
+
             // Initial state check
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
@@ -268,6 +212,58 @@
                     }
                 }
             });
+
+            // --- Pop-up Modal Logic ---
+            const supportModal = document.getElementById('supportModal');
+            const modalContent = supportModal.querySelector('.modal-content'); // Get modal content
+            const closeButton = document.querySelector('.close-button');
+            const yesSupportButton = document.getElementById('yesSupport');
+            const noSupportButton = document.getElementById('noSupport');
+            const koFiLink = 'https://ko-fi.com/atydraws';
+
+            // Function to show the modal with animation
+            function showModal() {
+                supportModal.style.display = 'flex'; // Make the modal container visible
+                // Use a tiny delay to ensure display:flex is applied before animation
+                setTimeout(() => {
+                    modalContent.classList.add('modal-show');
+                }, 10); // Small delay
+            }
+
+            // Function to hide the modal with animation
+            function hideModal() {
+                modalContent.classList.remove('modal-show');
+                // Hide the modal container after the animation completes
+                modalContent.addEventListener('transitionend', function handler() {
+                    supportModal.style.display = 'none';
+                    modalContent.removeEventListener('transitionend', handler); // Remove listener after execution
+                });
+            }
+
+            // Show modal automatically on page load
+            showModal();
+
+            // When the user clicks on <span> (x), close the modal
+            closeButton.addEventListener('click', hideModal);
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.addEventListener('click', function(event) {
+                if (event.target == supportModal) {
+                    hideModal();
+                }
+            });
+
+            // Handle "Yes" button click
+            yesSupportButton.addEventListener('click', function() {
+                window.open(koFiLink, '_blank'); // Open Ko-fi link in a new tab
+                hideModal();
+            });
+
+            // Handle "No" button click
+            noSupportButton.addEventListener('click', hideModal);
+
+            // Handle "Support Me" button in header click
+            supportButton.addEventListener('click', showModal);
         });
     </script>
 
