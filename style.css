@@ -52,33 +52,32 @@ h3 { font-size: 1.75em; }
 }
 
 .main-header.scrolled {
-    padding: 5px 0; /* Even smaller padding when scrolled */
-    height: 50px; /* Smaller height when scrolled */
-    justify-content: center; /* Center "Amalia" when shrunk */
+    padding: 5px 0; 
+    height: 50px; 
+    justify-content: center; 
 }
 
 .site-title {
     margin: 0;
-    font-size: 2em; /* Initial font size */
+    font-size: 2em; 
     color: #fff;
-    transition: font-size 0.3s ease; /* Smooth transition for font size */
+    transition: font-size 0.3s ease; 
 }
 
-/* No change needed for .main-header.scrolled .site-title as JS handles it directly now */
 
 
 .main-nav {
-    flex-grow: 1; /* Allows navigation to take available space */
-    display: flex; /* Always flex initially */
-    justify-content: flex-end; /* Align navigation to the right */
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for nav */
+    flex-grow: 1; 
+    display: flex; 
+    justify-content: flex-end; 
+    transition: opacity 0.3s ease, visibility 0.3s ease; 
 }
 
-/* NEW CSS CLASS for hidden navigation */
+
 .main-nav.hidden-nav {
     opacity: 0;
     visibility: hidden;
-    pointer-events: none; /* Prevent interaction when hidden */
+    pointer-events: none; 
 }
 
 
@@ -104,13 +103,13 @@ h3 { font-size: 1.75em; }
 }
 
 .main-nav ul li a:hover {
-    color: #bebebe; /* Light beige on hover */
+    color: #bebebe;
 }
 
-/* Added Support Button Styling */
+
 .support-button {
-    background-color: #bebebe; /* Beige button */
-    color: #000; /* Black text */
+    background-color: #bebebe; 
+    color: #000; 
     border: none;
     padding: 8px 15px;
     border-radius: 5px;
